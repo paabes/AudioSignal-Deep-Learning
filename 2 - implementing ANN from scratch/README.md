@@ -9,5 +9,5 @@ This code implements 3-layer artificial neural network with **Sigmoid** activati
 * **a** - Ativated input **h**
 * **Y** - Final output
 
-![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/1%20-%20implementing%20artificial%20neuron%20from%20scratch/figures/neuron_with_sigmoid.png "Neuron")
+![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/2%20-%20implementing%20ANN%20from%20scratch/figures/1.png)
  
