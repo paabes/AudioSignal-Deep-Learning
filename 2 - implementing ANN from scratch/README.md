@@ -6,12 +6,12 @@ This code implements 3-layer artificial neural network with **Sigmoid** activati
 * **W** - 2x3 Matrix of input weights
 * **h** - Sum of weighted inputs: **xW**
 * **f(x)** - Activation function, Sigmoid function in this case
-* **a** - Ativated input **h**
+* **a** - Ativated input **h**, **a**=**f(h)**
 * **Y** - Final output
 
 ![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/2%20-%20implementing%20ANN%20from%20scratch/figures/1.png)
 
-Activated input obtained at the end of the 2nd layer then gets transformed into **h(3)** - a weighted sum of activated inputs. For obtaining the final output , **h(3)** is passed through the activation function:
+* Activated input obtained at the end of the 2nd layer then gets transformed into **h(3)** - a weighted sum of activated inputs. For obtaining the final output , **h(3)** is passed through the activation function:
 
 
 ![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/2%20-%20implementing%20ANN%20from%20scratch/figures/2.png)
