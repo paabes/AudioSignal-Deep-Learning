@@ -1,0 +1,3 @@
+## Classyfing Music Genres with Multilayer Perception (ANN)
+ 
+* Dataset is approximately 1.5GBs which is why I have not included it in the repo, it is available for free at: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZDS19oOWhTUDlkOHpzdFd2VzJPZ1V6YW11QXxBQ3Jtc0ttWkhSOTFEX0J3WkxaSzQ3LWxKcGJpOVdmdVZVQ2VzVXdfYmVMV0k1dzJKRFU2NUxZWk9TMUNSc3BQMVEtMmNzbnNmMnNkOWtWcDFkd2JJeDVIeUt4RXVmYU9SbkRyYnZJVFFsaDNvR1QzdHhUOEMtRQ&q=https%3A%2F%2Fwww.kaggle.com%2Fandradaolteanu%2Fgtzan-dataset-music-genre-classification

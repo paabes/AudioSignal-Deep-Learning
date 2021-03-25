@@ -52,3 +52,7 @@ geckodriver.log
 .history
 .vscode
 random_walks/.Rhistory
+
+# huge dataset
+dataset_audio_samples
+venv
