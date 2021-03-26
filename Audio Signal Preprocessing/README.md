@@ -8,7 +8,9 @@ This part of the project is dedicated to exploring different techniques for audi
 
 **More detailed commentary is included with code in the Jupyter Notebook**
 
-### Here are some extracts from plots obtained during signal analysis:
+
+
+## Here are some extracts from plots obtained during signal analysis:
 
 ![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/Audio%20Signal%20Preprocessing/figures/waveform.jpg)
 
