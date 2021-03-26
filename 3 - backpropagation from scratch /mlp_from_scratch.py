@@ -63,6 +63,23 @@ class MultiLayerPerception:
         return y
 
 
+
+    def back_propagate(self, error):
+        pass
+
+    def train(self, inputs, targets, epochs, learning_rate):
+        pass
+
+    def gradient_descent(self, learningRate=1):
+        pass
+
+    def _sigmoid_derivative(self, x):
+        pass
+
+    def _mse(self, target, output):
+        pass
+
+
 if __name__ == '__main__':
     mlp = MultiLayerPerception()
     

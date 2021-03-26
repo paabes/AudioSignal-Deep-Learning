@@ -1,4 +1,4 @@
-## Classyfing Music Genres with Multilayer Perception (ANN)
+## Classifying Music Genres with ANN, tuned ANN, CNN & RNN
 
 The aim of this project is to develop and tune multiclass classification model with deep neural networks that accepts MFCC's as an input and matches it to one of 10 possible genres:
 
