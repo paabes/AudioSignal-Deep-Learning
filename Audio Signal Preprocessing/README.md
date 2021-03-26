@@ -6,9 +6,9 @@ This part of the project is dedicated to exploring different techniques for audi
 * Time-Frequency Analysis and Short-Time Fast Fourier Transform
 * Mel-Frequency Coefficient Retrieval
 
-More detailed commentary is included with code in the Jupyter Notebook
+**More detailed commentary is included with code in the Jupyter Notebook**
 
-### Here are some extracts from plots obtained during signal analysis:
+* Here are some extracts from plots obtained during signal analysis:
 
 ![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/Audio%20Signal%20Preprocessing/figures/waveform.jpg)
 
@@ -16,5 +16,5 @@ More detailed commentary is included with code in the Jupyter Notebook
 
 ![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/Audio%20Signal%20Preprocessing/figures/Spectrogram_dB.jpg)
 
-![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/Audio%20Signal%20Preprocessing/figures/Mel_Frequency_Cepstrum.jpg)
+![alt text](https://github.com/paabes/AudioSignal-Deep-Learning/blob/main/Audio%20Signal%20Preprocessing/figures/MFC.png)
  
