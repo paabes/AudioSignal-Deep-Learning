@@ -21,7 +21,7 @@ def save_mfcc(dataset_path, json_path, num_mfcc=13, n_fft=2048, hop_length=512, 
         :return:
         """
 
-    # dictionary to store mapping, labels, and MFCCs
+    # dictionary to store mapping, labels, MFCCs and output cleaned digitalized audio data
     data = {
         "mapping": [],
         "labels": [],
@@ -31,7 +31,7 @@ def save_mfcc(dataset_path, json_path, num_mfcc=13, n_fft=2048, hop_length=512, 
     samples_per_segment = int(SAMPLES_PER_TRACK / num_segments)
     num_mfcc_vectors_per_segment = math.ceil(samples_per_segment / hop_length)
 
-    # loop through all genre sub-folder
+    # loop through entire  genre sub-folder
     for i, (dirpath, dirnames, filenames) in enumerate(os.walk(dataset_path)):
 
         # ensure we're processing a genre sub-folder level
@@ -66,7 +66,7 @@ def save_mfcc(dataset_path, json_path, num_mfcc=13, n_fft=2048, hop_length=512, 
                         # store only mfcc feature with expected number of vectors
                         if len(mfcc) == num_mfcc_vectors_per_segment:
                             data["mfcc"].append(mfcc.tolist())
-                            data["labels"].append(i - 1)
+                            data["labels"].append(i - 2)
                             print("{}, segment:{}".format(file_path, d + 1))
 
     # save MFCCs to json file
