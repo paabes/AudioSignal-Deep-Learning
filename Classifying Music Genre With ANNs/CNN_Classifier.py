@@ -3,6 +3,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import tensorflow.keras as keras
 import matplotlib.pyplot as plt
+import seaborn as sns
+import os
 
 DATA_PATH = "cleaned-data/data_10.json"
 
@@ -28,14 +30,15 @@ def plot_history(history):
         :return:
     """
 
-    fig, axs = plt.subplots(2)
+    sns.set()
+    fig, axs = plt.subplots(2, constrained_layout=True)
 
     # create accuracy sublpot
     axs[0].plot(history.history["accuracy"], label="train accuracy")
     axs[0].plot(history.history["val_accuracy"], label="test accuracy")
     axs[0].set_ylabel("Accuracy")
     axs[0].legend(loc="lower right")
-    axs[0].set_title("Accuracy eval")
+    axs[0].set_title("CNN Accuracy eval")
 
     # create error sublpot
     axs[1].plot(history.history["loss"], label="train error")
@@ -43,7 +46,12 @@ def plot_history(history):
     axs[1].set_ylabel("Error")
     axs[1].set_xlabel("Epoch")
     axs[1].legend(loc="upper right")
-    axs[1].set_title("Error eval")
+    axs[1].set_title("CNN Error eval")
+
+    if not os.path.exists('figures'):
+        os.makedirs('figures')
+
+    plt.savefig('figures/CNN_accuracy_eval.jpg', dpi=300)
 
     plt.show()
 
@@ -67,7 +75,7 @@ def prepare_datasets(test_size, validation_size):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
     X_train, X_validation, y_train, y_validation = train_test_split(X_train, y_train, test_size=validation_size)
 
-    # add an axis to input sets
+    # add an axis to input sets, since technically cnn thinks audio data is image data with color depth=1 (grayscale)
     X_train = X_train[..., np.newaxis]
     X_validation = X_validation[..., np.newaxis]
     X_test = X_test[..., np.newaxis]
@@ -85,11 +93,12 @@ def build_model(input_shape):
     model = keras.Sequential()
 
     # 1st conv layer
+    # 32- number of kernels/filters, 3x3- grid size
     model.add(keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=input_shape))
     model.add(keras.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same'))
     model.add(keras.layers.BatchNormalization())
 
-    # 2nd conv layer
+    # 2nd conv layer (mimics first one) 
     model.add(keras.layers.Conv2D(32, (3, 3), activation='relu'))
     model.add(keras.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same'))
     model.add(keras.layers.BatchNormalization())
@@ -147,7 +156,7 @@ if __name__ == "__main__":
     model.summary()
 
     # train model
-    history = model.fit(X_train, y_train, validation_data=(X_validation, y_validation), batch_size=32, epochs=300)
+    history = model.fit(X_train, y_train, validation_data=(X_validation, y_validation), batch_size=16, epochs=300)
 
     # plot accuracy/error for training and validation
     plot_history(history)
